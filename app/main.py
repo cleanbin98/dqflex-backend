@@ -9,10 +9,10 @@ from recommender import item_based_recommendation, user_based_recommendation
 from resolver import random_genres_items, random_items
 
 origins = [
-    # "http://localhost",
-    # "http://localhost:3000",
-    # "https://dq-hustlecoding.github.io/dqflex",
-    # "https://dq-hustlecoding.github.io",
+     "http://localhost",
+     "http://localhost:3000",
+     "http://hibin.link:8080",
+     "http://dqflex-frontend.pages.dev",
     # "http://api.dqflex.kro.kr:8080",
     # "http://api.dqflex.kro.kr",
     "*",
