@@ -13,6 +13,7 @@ origins = [
      "http://localhost:3000",
      "http://hibin.link:8080",
      "http://dqflex-frontend.pages.dev",
+     "https://hibin.link:8080"
     # "http://api.dqflex.kro.kr:8080",
     # "http://api.dqflex.kro.kr",
     "*",
