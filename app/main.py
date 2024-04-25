@@ -8,6 +8,7 @@ from starlette.middleware import Middleware
 from recommender import item_based_recommendation, user_based_recommendation
 from resolver import random_genres_items, random_items
 
+#백엔드에서 접근 허용가능한 사이트 모음
 origins = [
      "http://localhost",
      "http://localhost:3000",
