@@ -1,14 +1,14 @@
 # Python으로 구현하는 영화 추천 웹 서비스
-    - CI/CD
-        - 백엔드 CI 자동화 : AWS EC2의 Gitlab-runner
-        - 프론트엔드 배포 : Github Pages, Cloudflare
-    - 파일 구조
-        - data 폴더 : 영화 정보에 대한 데이터 셋 csv 파일이 들어있다.
-        - model 폴더의 finalized_model.sav 파일 : [recommender.py](http://recommender.py)에서 pickle.dump로 생성된 유저들의 rating 정보를 행렬로 정리된 파일
-        - movie_preprocessor.py : 데이터 전처리 로직 파일이다.
-        - [recommender.py](http://recommender.py) : 영화 추천 알고리즘
-        - [resolver.py](http://resolver.py) : 랜덤으로 영화 반환 혹은 랜덤으로 같은 장르의 영화를 반환해주는 파일이다.
-        - venv : 파이썬 가상환경 폴더다.
+- CI/CD
+  - 백엔드 CI 자동화 : AWS EC2의 Gitlab-runner
+    - 프론트엔드 배포 : Github Pages, Cloudflare
+- 파일 구조
+  - data 폴더 : 영화 정보에 대한 데이터 셋 csv 파일이 들어있다.
+  - model 폴더의 finalized_model.sav 파일 : [recommender.py](http://recommender.py)에서 pickle.dump로 생성된 유저들의 rating 정보를 행렬로 정리된 파일
+  - movie_preprocessor.py : 데이터 전처리 로직 파일이다.
+  - [recommender.py](http://recommender.py) : 영화 추천 알고리즘
+  - [resolver.py](http://resolver.py) : 랜덤으로 영화 반환 혹은 랜덤으로 같은 장르의 영화를 반환해주는 파일이다.
+  - venv : 파이썬 가상환경 폴더다.
 # 트러블 슈팅
 
 - 백엔드 코드의 지속적인 통합을 위한 gitlab과 vscode 연결이 되지 않아서 약 2시간 넘게 트러블 슈팅한 결과, vscode로 확장 프로그램 gitlab을 설치해서 연동하면 commit과 push가 커멘드 팔레트에서 정상적으로 작동되지 않았다. 그 이유는 왼쪽 source control(버전 관리)에서 message를 입력하지 않았기 때문이다. 그래서 나는 gitlab 사이트에서 code 버튼을 누르고 https로 ide 열기로 연동을 하고 source control로 commit, push를 하기로 했다.
