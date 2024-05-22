@@ -10,8 +10,10 @@ def add_url(row):
 
 def add_rating(df):
     ratings_df = pd.read_csv('data/ratings.csv')
+    #id를 문자로 인식할 수 있도록 type을 변경
     ratings_df['movieId'] = ratings_df['movieId'].astype(str)
     agg_df = ratings_df.groupby('movieId').agg(
+        #컬럼 추가.
         rating_count=('rating', 'count'),
         rating_avg=('rating', 'mean')
     ).reset_index()
@@ -20,6 +22,7 @@ def add_rating(df):
     return rating_added_df
 
 
+#api 키를 가져와서 이미지 불러오기.
 def add_poster(df):
     for i, row in tqdm(df.iterrows(), total=df.shape[0]):
         tmdb_id = row["tmdbId"]
@@ -43,5 +46,5 @@ if __name__ == "__main__":
     result_df = add_rating(merged_df)
     result_df['poster_path'] = None
     result_df = add_poster(result_df)
-
+    # 전처리 완료 파일 생성
     result_df.to_csv("data/movies_final.csv", index=None)
