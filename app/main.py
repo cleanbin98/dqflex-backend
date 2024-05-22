@@ -33,6 +33,7 @@ middleware = [
 
 app = FastAPI(middleware=middleware)
 
+#밑에서부터는 라우팅
 
 @app.get("/")
 async def root():
