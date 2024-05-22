@@ -23,6 +23,7 @@
 - CORS(Cross-Origin-Resource-Sharing)의 약자로 프론트엔드가 다른 “origin”(프로토콜 http, https, 도메인 이름, 포트 번호등을 의미)에 있는 백엔드와 통신하는 상황을 의미한다. → 내가 사용하는 FastAPI에서는 CORSMiddleware를 사용해서 origin을 안전하게 연결시켜준다.
 - snippet(스니펫)이란 재사용 가능한 조각 코드 즉, 환경 설정을 위한 임포트등을 뜻한다.
 - 위에서 작성한 asix 에러를 해결하기 위해서 좀 더 큰 행렬차원의 파일을 다운 받으려고 했지만 api키로 작업하는 일이다 보니 최소 20시간 이상 걸리며 네트워크가 중간에 끊겨질경우 설치가 취소되며, 또 같은 요청을 몇번 반복하면 api 서버에서 로봇인 줄 알고 차단한다고 한다. 이 문제 또한 해결하기 위해서 로봇이 아님을 증명하기 위한 User-Agent 값을 헤더에 넣어줘서 요청을 보냈지만 5시간 설치하다가 또 차단당했다. 그래서 결국 위에서 제시한 해결 방법대로 데이터 셋 파일의 인덱스를 맞추어 주었더니 해결이 되었다.
+- 프론트 엔드 배포가 잘 되지 않았다. 에러 내용은 Mixed Content: The page at '<URL>' was loaded over HTTPS, but requested an insecure XMLHttpRequest endpoint '<URL>'. This request has been blocked; the content must be served over HTTPS. 이다. 이 에러는 https와 http 요청은 서로 연결되지 않으니 맞추어 주라는 의미다. 즉, 백엔드에서 http로 요청을 보내니 https에서 차단을 하는 것이다. 이 문제를 해결하기 위해서 아마존의 로드밸런서를 사용해 http url을 https로 접근 할 수 있도록 설정 해주고, 프론트 엔드의 base url을 https로 변경 해주었더니 잘 작동 되었다.
 
   # 공부한 내용
 
